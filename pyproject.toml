@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "puchnstore-server"
+version = "0.0.1"
+description = "A lightweight Flask API to receive and store files via HTTP POST requests — with built-in authentication and simplicity."
+authors = ["renato-farias <renatocdfs@gmail.com>"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.10"
+flask = "^3.0.0"
+flask-httpauth = "^4.8.0"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
