@@ -47,6 +47,7 @@ EXPOSE 8080
 
 WORKDIR /home/puchnstore/app
 
+ENV HTTP_HOST=0.0.0.0
 
 ENTRYPOINT ["/usr/local/bin/python3"]
 
