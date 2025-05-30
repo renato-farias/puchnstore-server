@@ -20,7 +20,7 @@ def test_upload_success(client):
         data=data,
         content_type="multipart/form-data",
         headers={
-            "Authorization": "Basic cHVjaG5zdG9yZTpwdWNobnN0b3Jl"  # base64(puchnstore:puchnstore)
+            "Authorization": "Basic cHVzaG5zdG9yZTpwdXNobnN0b3Jl"  # base64(pushnstore:pushnstore)
         }
     )
     assert response.status_code == 200
@@ -35,7 +35,7 @@ def test_upload_no_file(client):
         data={},
         content_type="multipart/form-data",
         headers={
-            "Authorization": "Basic cHVjaG5zdG9yZTpwdWNobnN0b3Jl"
+            "Authorization": "Basic cHVzaG5zdG9yZTpwdXNobnN0b3Jl"
         }
     )
     assert response.status_code == 400

@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "puchnstore-server"
+name = "pushnstore-server"
 version = "0.0.1"
 description = "A lightweight Flask API to receive and store files via HTTP POST requests — with built-in authentication and simplicity."
 authors = ["renato-farias <renatocdfs@gmail.com>"]

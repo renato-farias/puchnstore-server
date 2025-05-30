@@ -8,8 +8,8 @@ from werkzeug.security import generate_password_hash, check_password_hash
 UPLOAD_FOLDER = os.getenv("UPLOAD_FOLDER", "uploads")
 HTTP_HOST = os.getenv("HTTP_HOST", "localhost")
 HTTP_PORT = int(os.getenv("HTTP_PORT", 8080))
-ADMIN_USERNAME = os.getenv("ADMIN_USERNAME", "puchnstore")
-ADMIN_PASSWORD = os.getenv("ADMIN_PASSWORD", "puchnstore")
+ADMIN_USERNAME = os.getenv("ADMIN_USERNAME", "pushnstore")
+ADMIN_PASSWORD = os.getenv("ADMIN_PASSWORD", "pushnstore")
 
 
 app = Flask(__name__)

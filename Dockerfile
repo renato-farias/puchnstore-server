@@ -20,13 +20,13 @@ WORKDIR /build/app/source
 RUN poetry install --no-interaction --no-ansi
 # RUN apk --purge del .build-deps
 
-RUN adduser -D -s /bin/bash -h /home/puchnstore puchnstore
+RUN adduser -D -s /bin/bash -h /home/pushnstore pushnstore
 
-WORKDIR /home/puchnstore/app
+WORKDIR /home/pushnstore/app
 
 RUN mkdir -p uploads
 
-ADD app.py /home/puchnstore/app/
+ADD app.py /home/pushnstore/app/
 
 RUN rm -rf /build
 
@@ -35,17 +35,17 @@ FROM scratch
 COPY --from=builder /etc/passwd /etc/passwd
 COPY --from=builder /etc/group /etc/group
 
-USER puchnstore
+USER pushnstore
 
-COPY --from=builder --chown=puchnstore:puchnstore /usr/local/lib /usr/local/lib
-COPY --from=builder --chown=puchnstore:puchnstore /usr/local/bin /usr/local/bin
-COPY --from=builder --chown=puchnstore:puchnstore /usr/lib /usr/lib
-COPY --from=builder --chown=puchnstore:puchnstore /lib /lib
-COPY --from=builder --chown=puchnstore:puchnstore /home/puchnstore/app /home/puchnstore/app
+COPY --from=builder --chown=pushnstore:pushnstore /usr/local/lib /usr/local/lib
+COPY --from=builder --chown=pushnstore:pushnstore /usr/local/bin /usr/local/bin
+COPY --from=builder --chown=pushnstore:pushnstore /usr/lib /usr/lib
+COPY --from=builder --chown=pushnstore:pushnstore /lib /lib
+COPY --from=builder --chown=pushnstore:pushnstore /home/pushnstore/app /home/pushnstore/app
 
 EXPOSE 8080
 
-WORKDIR /home/puchnstore/app
+WORKDIR /home/pushnstore/app
 
 ENV HTTP_HOST=0.0.0.0
 

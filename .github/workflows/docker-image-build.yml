@@ -5,7 +5,7 @@ on:
     tags: [ 'v*.*.*' ]
 
 env:
-  IMAGE_NAME: "rcdfs/puchnstore-server"
+  IMAGE_NAME: "rcdfs/pushnstore-server"
 
 jobs:
   push_to_registry:
