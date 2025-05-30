@@ -38,3 +38,22 @@ docker run -ti --rm -p 8080:8080 rcdfs/pushnstore-server:dev
 ```
 
 This will start the server at http://localhost:8080. You can now test it using the client or curl.
+
+### Code Example
+
+```python
+import requests
+from requests.auth import HTTPBasicAuth
+
+API_URL = 'http://localhost:8080/upload'
+USERNAME = 'admin'
+PASSWORD = 'password123'
+FILE_PATH = 'example.txt'
+
+with open(FILE_PATH, 'rb') as f:
+    files = {'file': (FILE_PATH, f)}
+    response = requests.put(API_URL, files=files, auth=HTTPBasicAuth(USERNAME, PASSWORD))
+
+print(f'Status: {response.status_code}')
+print(response.json())
+```
